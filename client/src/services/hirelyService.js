@@ -1,0 +1,28 @@
+import api from './api';
+
+export const getDashboard = async () => (await api.get('/dashboard')).data;
+export const getProjects = async (params = {}) => (await api.get('/projects', { params })).data;
+export const getProject = async (id) => (await api.get(`/projects/${id}`)).data;
+export const createProject = async (payload) => (await api.post('/projects', payload)).data;
+export const updateProject = async (id, payload) => (await api.put(`/projects/${id}`, payload)).data;
+export const deleteProject = async (id) => (await api.delete(`/projects/${id}`)).data;
+export const getFreelancers = async (params = {}) => (await api.get('/freelancers', { params })).data;
+export const getFreelancer = async (id) => (await api.get(`/freelancers/${id}`)).data;
+export const getHiringRequests = async (params = {}) => (await api.get('/hiring-requests', { params })).data;
+export const createHiringRequest = async (payload) => (await api.post('/hiring-requests', payload)).data;
+export const updateHiringRequest = async (id, status) => (await api.patch(`/hiring-requests/${id}/status`, { status })).data;
+export const getContracts = async (params = {}) => (await api.get('/contracts', { params })).data;
+export const createContract = async (payload) => (await api.post('/contracts', payload)).data;
+export const updateContract = async (id, status) => (await api.patch(`/contracts/${id}/status`, { status })).data;
+export const getMilestones = async (id) => (await api.get(`/contracts/${id}/milestones`)).data;
+export const createMilestone = async (id, payload) => (await api.post(`/contracts/${id}/milestones`, payload)).data;
+export const updateMilestone = async (id, milestoneId, status) => (await api.patch(`/contracts/${id}/milestones/${milestoneId}/status`, { status })).data;
+export const getSavedFreelancers = async () => (await api.get('/saved-freelancers')).data;
+export const saveFreelancer = async (freelancerId) => (await api.post('/saved-freelancers', { freelancerId })).data;
+export const removeSavedFreelancer = async (freelancerId) => (await api.delete('/saved-freelancers', { data: { freelancerId } })).data;
+export const getProfile = async () => (await api.get('/users/profile')).data;
+export const updateProfile = async (payload) => (await api.put('/users/profile', payload)).data;
+export const getMessages = async (params = {}) => (await api.get('/messages', { params })).data;
+export const sendMessage = async (payload) => (await api.post('/messages', payload)).data;
+export const getNotifications = async (params = {}) => (await api.get('/notifications', { params })).data;
+export const createReview = async (payload) => (await api.post('/reviews', payload)).data;
