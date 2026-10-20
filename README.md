@@ -5,7 +5,7 @@ Hirely is a MERN freelancer marketplace with separate business-owner and freelan
 ## Stack
 - Frontend: React 18, Vite, React Router, Axios, Tailwind CSS, React Icons, react-hot-toast
 - Backend: Node.js, Express, MongoDB, Mongoose, JWT
-- API base URL: `http://localhost:5000/api` by default
+- API base URL: `http://localhost:5000/api` by default 
 
 ## Run locally (Windows CMD)
 
